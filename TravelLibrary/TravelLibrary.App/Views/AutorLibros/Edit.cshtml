@@ -1,0 +1,36 @@
+﻿@model TravelLibrary.App.Entities.AutorLibro
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2 class="alert alert-success">EDITAR</h2>
+
+<h4 class="alert alert-info">AUTOR Y LIBROS</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="AutoresId" class="control-label"></label>
+                <select asp-for="AutoresId" class="form-control" asp-items="ViewBag.AutoresId"></select>
+                <span asp-validation-for="AutoresId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LibrosId" class="control-label"></label>
+                <select asp-for="LibrosId" class="form-control" asp-items="ViewBag.LibrosId"></select>
+                <span asp-validation-for="LibrosId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Modificar" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-success">Regresar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

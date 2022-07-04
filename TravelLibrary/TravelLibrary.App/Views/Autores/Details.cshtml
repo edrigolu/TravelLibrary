@@ -1,0 +1,30 @@
+﻿@model TravelLibrary.App.Entities.Autor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2 class="alert alert-success">DETALLES</h2>
+
+<div>
+    <h4 class="alert alert-info">AUTOR</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+    </dl>
+</div>
+<div>    
+    <a asp-action="Index" class="btn btn-success">Regresar</a>
+</div>
+
