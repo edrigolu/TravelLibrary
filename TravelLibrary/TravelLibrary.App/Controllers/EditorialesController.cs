@@ -77,9 +77,7 @@ namespace TravelLibrary.App.Controllers
             return View(editorial);
         }
 
-        // POST: Editoriales/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Sede")] Editorial editorial)
@@ -138,15 +136,15 @@ namespace TravelLibrary.App.Controllers
         }
 
         // POST: Editoriales/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var editorial = await _context.Editorials.FindAsync(id);
-            _context.Editorials.Remove(editorial);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed(int id)
+        //{
+        //    var editorial = await _context.Editorials.FindAsync(id);
+        //    _context.Editorials.Remove(editorial);
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //}
 
         private bool EditorialExists(int id)
         {

@@ -81,9 +81,7 @@ namespace TravelLibrary.App.Controllers
             return View(libro);
         }
 
-        // POST: Libros/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Isbn,Titulo,Sinopsis,NPaginas,EditorialesId")] Libro libro)
@@ -142,7 +140,7 @@ namespace TravelLibrary.App.Controllers
             _context.Libros.Remove(libro);
             await _context.SaveChangesAsync();
 
-            return View(libro);
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Libros/Delete/5
